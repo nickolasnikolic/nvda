@@ -28,17 +28,13 @@ default setup
 
 *** Test Cases ***
 moveByWord with symbolLevelWord
-	# Disabled due to revert of PR #11856 is: "Speak all symbols when moving by words (#11779)
-	[Tags]	excluded_from_build
 	[Documentation]	Ensure all symbols are read when navigating by word.
 	test_moveByWord_symbolLevelWord
 moveByLine with symbolLevelWord
 	[Documentation]	Ensure all symbols are read when navigating by line.
-	[Tags]	excluded_from_build
 	test_moveByLine_symbolLevelWord
 moveByCharacter with symbolLevelWord
 	[Documentation]	Ensure all symbols are read when navigating by character.
-	[Tags]	excluded_from_build
 	test_moveByChar_symbolLevelWord
 
 moveByWord

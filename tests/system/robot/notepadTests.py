@@ -55,27 +55,25 @@ def _doMoveByWordTest(expected: typing.List[str]):
 
 
 def test_moveByWord_symbolLevelWord():
-	"""Disabled due to revert of PR #11856 is: "Speak all symbols when moving by words (#11779)
-	"""
 	spy = _NvdaLib.getSpyLib()
 	spy.set_configValue(["speech", "symbolLevelWordAll"], True)
 
 	# unlike other symbols used, symbols.dic doesn't preserve quote symbols with SYMPRES_ALWAYS
 	_doMoveByWordTest(expected=[
 		'Say',
-		'(quietly)',
-		'Hello,',
+		'left paren(quietly right paren)',
+		'quote Hello comma,',
 		'Jim',
-		'.',
-		'right pointing arrow',  # has space before and after symbol
-		't shirt',  # has space before and after symbol
+		'quote  dot.',
+		'right-pointing arrow',  # has space before and after symbol
+		't-shirt',  # has space before and after symbol
 		# end of first line
 		'blank',  # single space and newline
-		'',  # tab and newline
+		'tab',  # tab and newline
 		'blank',  # 4 spaces and newline
-		'right pointing arrow',  # no space before or after symbol
-		't shirt',  # no space before or after symbol
-		't shirt',  # no character before or after symbol (no newline)
+		'right-pointing arrow',  # no space before or after symbol
+		't-shirt',  # no space before or after symbol
+		't dash shirt',  # no character before or after symbol (no newline)
 		'blank',  # end of doc
 	])
 
@@ -90,14 +88,14 @@ def test_moveByWord():
 		'Hello,',
 		'Jim',
 		'.',
-		'right pointing arrow',  # has space before and after symbol
-		't shirt',  # has space before and after symbol
+		'right-pointing arrow',  # has space before and after symbol
+		't-shirt',  # has space before and after symbol
 		# end of first line
 		'blank',  # single space and newline
 		'',  # tab and newline
 		'blank',  # 4 spaces and newline
-		'right pointing arrow',  # no space before or after symbol
-		't shirt',  # no space before or after symbol
+		'right-pointing arrow',  # no space before or after symbol
+		't-shirt',  # no space before or after symbol
 		't shirt',  # no character before or after symbol (no newline)
 		'blank',  # end of doc
 	])
@@ -180,8 +178,8 @@ def test_moveByChar():
 		'right paren',
 		'e',
 		'comma',
-		'right pointing arrow',
-		't shirt',
+		'right dash pointing arrow',
+		't dash shirt',
 		'tab',
 		'carriage return',  # on Windows/notepad newline is \r\n
 		'line feed',  # on Windows/notepad newline is \r\n
@@ -199,8 +197,8 @@ def test_moveByChar_symbolLevelWord():
 		'right paren',
 		'e',
 		'comma',
-		'right pointing arrow',
-		't shirt',
+		'right dash pointing arrow',
+		't dash shirt',
 		'tab',
 		'carriage return',  # on Windows/notepad newline is \r\n
 		'line feed',  # on Windows/notepad newline is \r\n
