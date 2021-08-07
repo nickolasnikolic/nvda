@@ -73,7 +73,7 @@ def test_moveByWord_symbolLevelWord():
 		'blank',  # 4 spaces and newline
 		'right-pointing arrow',  # no space before or after symbol
 		't-shirt',  # no space before or after symbol
-		't dash shirt',  # no character before or after symbol (no newline)
+		't-shirt',  # no character before or after symbol (no newline)
 		'blank',  # end of doc
 	])
 
@@ -96,7 +96,7 @@ def test_moveByWord():
 		'blank',  # 4 spaces and newline
 		'right-pointing arrow',  # no space before or after symbol
 		't-shirt',  # no space before or after symbol
-		't shirt',  # no character before or after symbol (no newline)
+		't-shirt',  # no character before or after symbol (no newline)
 		'blank',  # end of doc
 	])
 
@@ -178,8 +178,8 @@ def test_moveByChar():
 		'right paren',
 		'e',
 		'comma',
-		'right dash pointing arrow',
-		't dash shirt',
+		'right-pointing arrow',
+		't-shirt',
 		'tab',
 		'carriage return',  # on Windows/notepad newline is \r\n
 		'line feed',  # on Windows/notepad newline is \r\n
@@ -197,8 +197,8 @@ def test_moveByChar_symbolLevelWord():
 		'right paren',
 		'e',
 		'comma',
-		'right dash pointing arrow',
-		't dash shirt',
+		'right-pointing arrow',
+		't-shirt',
 		'tab',
 		'carriage return',  # on Windows/notepad newline is \r\n
 		'line feed',  # on Windows/notepad newline is \r\n

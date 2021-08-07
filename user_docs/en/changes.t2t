@@ -30,6 +30,9 @@ What's New in NVDA
   - Instead use ``apiLevel`` (see the comments at ``_UIAConstants.WinConsoleAPILevel`` for details).
   -
 - Transparency of text background color sourced from GDI applications (via the display model), is now exposed for add-ons or appModules. (#12658)
+- New 'Atomic' speech commands have been introduced. (#12710)
+  - 'Symbol' speech command, encapsulates symbol descriptions.
+  - `UserInterface` speech command, encapsulates NVDA's user interface messages.
 -
 
 
