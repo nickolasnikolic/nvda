@@ -65,15 +65,15 @@ def test_moveByWord_symbolLevelWord():
 		'quote Hello comma,',
 		'Jim',
 		'quote  dot.',
-		'right pointing arrow',  # has space before and after symbol
-		't shirt',  # has space before and after symbol
+		'right-pointing arrow',  # has space before and after symbol
+		't-shirt',  # has space before and after symbol
 		# end of first line
 		'blank',  # single space and newline
 		'tab',  # tab and newline
 		'blank',  # 4 spaces and newline
-		'right pointing arrow',  # no space before or after symbol
-		't shirt',  # no space before or after symbol
-		't shirt',  # no character before or after symbol (no newline)
+		'right-pointing arrow',  # no space before or after symbol
+		't-shirt',  # no space before or after symbol
+		't-shirt',  # no character before or after symbol (no newline)
 		'blank',  # end of doc
 	])
 
@@ -88,15 +88,15 @@ def test_moveByWord():
 		'Hello,',
 		'Jim',
 		'.',
-		'right pointing arrow',  # has space before and after symbol
-		't shirt',  # has space before and after symbol
+		'right-pointing arrow',  # has space before and after symbol
+		't-shirt',  # has space before and after symbol
 		# end of first line
 		'blank',  # single space and newline
 		'',  # tab and newline
 		'blank',  # 4 spaces and newline
-		'right pointing arrow',  # no space before or after symbol
-		't shirt',  # no space before or after symbol
-		't shirt',  # no character before or after symbol (no newline)
+		'right-pointing arrow',  # no space before or after symbol
+		't-shirt',  # no space before or after symbol
+		't-shirt',  # no character before or after symbol (no newline)
 		'blank',  # end of doc
 	])
 
