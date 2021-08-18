@@ -847,10 +847,6 @@ def speak(  # noqa: C901
 			speechSequence[index]=processText(curLanguage,item,symbolLevel)
 			if not inCharacterMode:
 				speechSequence[index]+=CHUNK_SEPARATOR
-		if isinstance(item, Symbol):
-			speechSequence[index] = Symbol(
-				text=processText(curLanguage, speechSequence[index].text, characterProcessing.SymbolLevel.NONE)
-			)
 	_manager.speak(speechSequence, priority)
 
 

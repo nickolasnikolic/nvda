@@ -178,8 +178,8 @@ def test_moveByChar():
 		'right paren',
 		'e',
 		'comma',
-		'right pointing arrow',
-		't shirt',
+		'right-pointing arrow',
+		't-shirt',
 		'tab',
 		'carriage return',  # on Windows/notepad newline is \r\n
 		'line feed',  # on Windows/notepad newline is \r\n
@@ -197,8 +197,8 @@ def test_moveByChar_symbolLevelWord():
 		'right paren',
 		'e',
 		'comma',
-		'right pointing arrow',
-		't shirt',
+		'right-pointing arrow',
+		't-shirt',
 		'tab',
 		'carriage return',  # on Windows/notepad newline is \r\n
 		'line feed',  # on Windows/notepad newline is \r\n
