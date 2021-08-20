@@ -22,7 +22,7 @@ FetchLocalDataReturnType = typing.TypeVar("FetchLocalDataReturnType")
 class LocaleDataMap(typing.Generic[FetchLocalDataReturnType]):
 	"""Allows access to locale-specific data objects, dynamically loading them if needed on request"""
 
-	def __init__(self, localeDataFactory: typing.Callable[[str, ], FetchLocalDataReturnType]):
+	def __init__(self, localeDataFactory: typing.Callable[[str], FetchLocalDataReturnType]):
 		"""
 		@param localeDataFactory: the factory to create data objects for the requested locale.
 		"""
