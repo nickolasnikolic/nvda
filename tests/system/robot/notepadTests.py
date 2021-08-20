@@ -6,7 +6,7 @@
 """Logic for reading text using NVDA in the notepad text editor.
 """
 # imported methods start with underscore (_) so they don't get imported into robot files as keywords
-import typing
+import typing as _typing
 
 from SystemTestSpy import (
 	_getLib,
@@ -18,7 +18,7 @@ from AssertsLib import AssertsLib as _AssertsLib
 import NvdaLib as _NvdaLib
 from robot.libraries.BuiltIn import BuiltIn
 
-builtIn: BuiltIn = BuiltIn()
+_builtIn: BuiltIn = BuiltIn()
 _notepad: _NotepadLib = _getLib("NotepadLib")
 _asserts: _AssertsLib = _getLib("AssertsLib")
 
@@ -27,7 +27,7 @@ navToNextWordKey = "numpad6"
 navToNextLineKey = "numpad9"
 
 
-def _pressKeyAndCollectSpeech(key: str, numberOfTimes: int) -> typing.List[str]:
+def _pressKeyAndCollectSpeech(key: str, numberOfTimes: int) -> _typing.List[str]:
 	actual = []
 	for _ in range(numberOfTimes):
 		spoken = _NvdaLib.getSpeechAfterKey(key)
@@ -36,7 +36,7 @@ def _pressKeyAndCollectSpeech(key: str, numberOfTimes: int) -> typing.List[str]:
 	return actual
 
 
-def _doMoveByWordTest(expected: typing.List[str]):
+def _doMoveByWordTest(expected: _typing.List[str]):
 	_moveByWordData = (
 		'Say (quietly) "Hello, Jim ". ➔ 👕 \n'
 		' \n'  # single space
@@ -48,10 +48,10 @@ def _doMoveByWordTest(expected: typing.List[str]):
 	)
 	_notepad.prepareNotepad(f"Test: {_moveByWordData}")
 	actual = _pressKeyAndCollectSpeech(navToNextWordKey, numberOfTimes=len(expected))
-	builtIn.should_be_equal(actual, expected)
+	_builtIn.should_be_equal(actual, expected)
 	# ensure all words tested
 	actual = _pressKeyAndCollectSpeech(navToNextWordKey, 1)
-	builtIn.should_be_equal(actual, [f"Bottom\n{expected[-1]}", ])
+	_builtIn.should_be_equal(actual, [f"Bottom\n{expected[-1]}", ])
 
 
 def test_moveByWord_symbolLevelWord():
@@ -138,10 +138,10 @@ def _doMoveByLineTest():
 
 	_notepad.prepareNotepad(f"Test:\n{textStr}")  # initial new line which isn't spoken
 	actual = _pressKeyAndCollectSpeech(navToNextLineKey, numberOfTimes=len(expected))
-	builtIn.should_be_equal(actual, expected)
+	_builtIn.should_be_equal(actual, expected)
 	# ensure all lines tested
 	actual = _pressKeyAndCollectSpeech(navToNextLineKey, 1)
-	builtIn.should_be_equal(actual, [f"Bottom\n{expected[-1]}", ])
+	_builtIn.should_be_equal(actual, [f"Bottom\n{expected[-1]}", ])
 
 
 def test_moveByLine():
@@ -156,15 +156,15 @@ def test_moveByLine_symbolLevelWord():
 	_doMoveByLineTest()
 
 
-def _doMoveByCharTest(expected: typing.List[str]):
+def _doMoveByCharTest(expected: _typing.List[str]):
 	_text = 'S ()e,➔👕\t\na'  # note, 'a' is on next line and won't be spoken
 
 	_notepad.prepareNotepad(f" {_text}")
 	actual = _pressKeyAndCollectSpeech(navToNextCharKey, numberOfTimes=len(expected))
-	builtIn.should_be_equal(actual, expected)
+	_builtIn.should_be_equal(actual, expected)
 	# ensure all chars tested
 	actual = _pressKeyAndCollectSpeech(navToNextCharKey, 1)
-	builtIn.should_be_equal(actual, [f"Right\n{expected[-1]}", ])
+	_builtIn.should_be_equal(actual, [f"Right\n{expected[-1]}", ])
 
 
 def test_moveByChar():
